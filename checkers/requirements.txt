@@ -1,1 +1,3 @@
 checklib
+requests
+pycryptodome==3.23.0

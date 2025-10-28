@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gallery with Search</title>
+  <link rel="stylesheet" href="/static/css/styles.css" />
+  <style>
+    /* Встроенные стили для навбара, если нет в styles.css */
+    nav {
+      background-color: #333;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    nav .left, nav .right {
+      display: flex;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-left">
+      <a href="/index.html" class="logo">📸 Галерея</a>
+    </div>
+    <div class="navbar-right">
+      <a href="/login.html">Вход</a>
+      <a href="/register.html">Регистрация</a>
+    </div>
+  </nav>
+
+  <h1>Галерея Фото</h1>
+
+  <form id="uploadForm">
+    <label for="name">Название</label>
+    <input id="name" name="name" type="text" required />
+
+    <label for="description">Описание</label>
+    <textarea id="description" name="description" rows="3" required></textarea>
+
+    <label>
+      <input id="premium" name="premium_only" type="checkbox" />
+      Только для премиум-пользователей
+    </label>
+
+    <label for="file">Выберите фото</label>
+    <input id="file" name="file" type="file" accept="image/*" required />
+
+    <button type="submit">Загрузить</button>
+  </form>
+
+  <div id="search-container">
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Поиск по названию или описанию..."
+    />
+    <button id="searchButton">Найти</button>
+    <button id="clearButton">Сбросить</button>
+  </div>
+
+  <div id="buy-premium">
+    <p>Все еще нет премиума? Купи прямо сейчас и смотри самые интересные фото уже сейчас!</p>
+    <a href="/static/buypremium.html">Купить</a>
+  </div>
+
+  <div id="photos"></div>
+
+  <script src="/static/js/gallery.js"></script>
+</body>
+</html>

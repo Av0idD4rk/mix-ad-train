@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: dicpic_app
+    ports:
+      - "1337:8000"
+    command: uvicorn app:app --host 0.0.0.0 --port 8000
+    depends_on:
+      - db
+    networks:
+      - dicpic
+  db:
+    image: postgres:13
+    container_name: dicpic_db
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=qwerty123
+      - POSTGRES_DB=dicpic
+    networks:
+      - dicpic
+
+networks:
+  dicpic:

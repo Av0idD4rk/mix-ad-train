@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Купить премиум</title>
+  <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body>
+  <h2>Покупка премиум доступа всего за 1000 коинов!</h2>
+  <p>Отправьте 1000 коинов на карту 1337-1337-1234-1234 и получите ключ!</p>
+  <form id="premiumForm">
+    <p>Ключ:</p>
+    <input type="text" name="key" placeholder="PREM-AAAA-BBBB-CCCC-DDDD" pattern="^PREM-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-F0-9]{4}$" required />
+    <button type="submit">Получить премиум</button>
+  </form>
+  <div id="msg"></div>
+  <script src="/static/js/buypremium.js"></script>
+</body>
+</html>

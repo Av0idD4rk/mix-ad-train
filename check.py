@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-
+import locale
 import argparse
 import json
 import os
@@ -185,8 +185,10 @@ class Checker(BaseValidator):
         p = subprocess.run(cmd, capture_output=True, check=False, env=env)
         elapsed = time.monotonic() - start
 
-        out = p.stdout.decode()
-        err = p.stderr.decode()
+        enc = "cp866"
+        out = (p.stdout or b"").decode(enc, errors="replace")
+        err = (p.stderr or b"").decode(enc, errors="replace")
+
 
         out_s = out.rstrip("\n")
         err_s = err.rstrip("\n")

@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+pydantic
+pyjwt
+python-dotenv
+python-multipart
+psycopg2-binary
