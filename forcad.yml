@@ -1,0 +1,50 @@
+game:
+  default_score: 12500
+  flag_lifetime: 10
+  game_hardness: 12.0
+  inflation: true
+  mode: classic
+  round_time: 60
+  start_time: 2025-10-28 19:00:00
+  timezone: Europe/Moscow
+
+tasks:
+  - checker: jeopardy/checker.py
+    checker_timeout: 15
+    checker_type: gevent_pfr
+    gets: 1
+    name: jeopardy
+    places: 1
+    puts: 1
+
+  - checker: msngr/checker.py
+    checker_timeout: 20
+    checker_type: gevent_pfr
+    gets: 1
+    name: msngr
+    places: 1
+    puts: 1
+
+  - checker: filtranator/checker.py
+    checker_timeout: 15
+    checker_type: gevent_pfr
+    gets: 1
+    name: filtranator
+    places: 1
+    puts: 1  
+
+  - checker: crud/checker.py
+    checker_timeout: 15
+    checker_type: gevent_pfr
+    gets: 1
+    name: crud
+    places: 1
+    puts: 1  
+
+  - checker: dicpic/checker.py
+    checker_timeout: 15
+    checker_type: gevent_pfr
+    gets: 1
+    name: dicpic
+    places: 1
+    puts: 1  
